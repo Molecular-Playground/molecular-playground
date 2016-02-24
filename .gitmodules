@@ -1,0 +1,18 @@
+[submodule "ms-email"]
+	path = ms-email
+	url = https://github.com/Molecular-Playground/ms-email
+[submodule "ms-schedule"]
+	path = ms-schedule
+	url = https://github.com/Molecular-Playground/ms-schedule
+[submodule "ms-users"]
+	path = ms-users
+	url = https://github.com/Molecular-Playground/ms-users
+[submodule "ms-login"]
+	path = ms-login
+	url = https://github.com/Molecular-Playground/ms-login
+[submodule "gateway"]
+	path = gateway
+	url = https://github.com/Molecular-Playground/gateway
+[submodule "databaes"]
+	path = databaes
+	url = https://github.com/Molecular-Playground/databaes
