@@ -1,0 +1,56 @@
+version: '2'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: dankmemes
+    networks:
+      - database
+
+  msusers:
+    build: ms-users/
+    # this port is only exposed temporarily until the gateway is finished
+    ports:
+      - "3000:3000"
+    networks:
+      - default
+      - database
+    depends_on:
+      - postgres
+    command: npm start
+
+  mslogin:
+    build: ms-login/
+    # this port is only exposed temporarily until the gateway is finished
+    ports:
+      - "3001:3001"
+    networks:
+      - default
+      - database
+    depends_on:
+      - postgres
+    command: npm start
+
+#  msschedule:
+#    build: ms-schedule/
+#    networks:
+#      - default
+#      - database
+#    depends_on:
+#      - postgres
+#    command: npm start
+
+#  msemail:
+#    build: ms-email/
+#    command: npm start
+
+  gateway:
+    build: gateway/
+    ports:
+      - "8000:8000"
+    command: npm start
+
+networks:
+  database:
+    driver: bridge
