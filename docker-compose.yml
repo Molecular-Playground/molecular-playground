@@ -2,19 +2,21 @@ version: '2'
 
 services:
   postgres:
-    build:
-      args:
-        build_type: ${BUILD_TYPE}
+#    build:
+#      args:
+#        build_type: ${BUILD_TYPE}
     image: postgres
     environment:
       POSTGRES_PASSWORD: dankmemes
     networks:
       - database
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-  volumes:
-    postgres-data:
-      driver: local
+    # volumes:
+    #   - postgres-data:/var/lib/postgresql/data
+
+  # volumes:
+  #   postgres-data:
+  #     driver: local
+
   msusers:
     build: ms-users/
     # this port is only exposed temporarily until the gateway is finished
