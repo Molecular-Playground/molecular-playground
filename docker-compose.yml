@@ -2,20 +2,14 @@ version: '2'
 
 services:
   postgres:
-   build:
-     args:
-       build_type: ${BUILD_TYPE}
-    image: postgres
+    build: 
+      context: databaes/
     environment:
       POSTGRES_PASSWORD: dankmemes
     networks:
       - database
     volumes:
       - postgres-data:/var/lib/postgresql/data
-
-  volumes:
-    postgres-data:
-      driver: local
 
   msusers:
     build: ms-users/
@@ -63,3 +57,7 @@ services:
 networks:
   database:
     driver: bridge
+
+volumes:
+  postgres-data:
+    driver: local
