@@ -1,10 +1,10 @@
 # Molecular Playground
 
 ### Getting started
-To get started, you first need ot install docker. Instructions for install docker can be found [here](https://docs.docker.com/engine/installation/). After you have docker installed, you will need to install docker compose. Follow the instructions [here](https://docs.docker.com/compose/install/).
+To get started, you first need to install docker. Instructions for installing docker can be found [here](https://docs.docker.com/engine/installation/). After you have docker installed, you will need to install docker compose. Follow the instructions [here](https://docs.docker.com/compose/install/).
 
 ### To Run
-After installation is all set up, simply run ```docker-compose up```.
+After installation is all set up, simply run ```docker-compose up```
 
 ### Resetting the Database
 To reset the database you will need to remove the postgres container as well as the data volume for the database.
