@@ -12,7 +12,7 @@ To reset the database you will need to remove the postgres container as well as 
 docker kill molecularplayground_postgres_1
 docker rm molecularplayground_postgres_1
 docker volume rm molecularplayground_postgres-data
-docker compose up
+docker-compose up
 ```
 
 ### To access the API
