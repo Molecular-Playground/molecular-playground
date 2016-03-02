@@ -38,9 +38,9 @@ services:
 #      - postgres
 #    command: npm start
 
-#  msemail:
-#    build: ms-email/
-#    command: npm start
+  msemail:
+    build: ms-email/
+    command: npm start
 
   gateway:
     build: gateway/
