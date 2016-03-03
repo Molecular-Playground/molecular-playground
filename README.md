@@ -17,3 +17,11 @@ docker-compose up
 
 ### To access the API
 Send all requests to port 8000.
+
+### Repository Maintenence
+Given that this repository uses sub-modules for it's composition, we have included a script to reduce the possibilty of keeping an outdated copy of a submodule in the repository. Whenever updating source code through the command line, use the command:
+```
+bash anti-medusa.sh
+```
+from the base folder of this repository. This script will recursively update all submodules in the repository.
+Please note that this is for the command line implementation. A GUI is recommended for further errors.
