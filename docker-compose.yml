@@ -29,14 +29,14 @@ services:
       - postgres
     command: npm start
 
-#  msschedule:
-#    build: ms-schedule/
-#    networks:
-#      - default
-#      - database
-#    depends_on:
-#      - postgres
-#    command: npm start
+  msschedule:
+    build: ms-schedule/
+    networks:
+      - default
+      - database
+    depends_on:
+      - postgres
+    command: npm start
 
   msemail:
     build: ms-email/
