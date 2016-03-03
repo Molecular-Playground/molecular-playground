@@ -19,9 +19,13 @@ docker-compose up
 Send all requests to port 8000.
 
 ### Repository Maintenence
-Given that this repository uses sub-modules for it's composition, we have included a script to reduce the possibilty of keeping an outdated copy of a submodule in the repository. Whenever updating source code through the command line, use the command:
+For those of you who are not using a superior GUI to interact with git, here are some useful commands:
 ```
-bash anti-medusa.sh
+# after checking out a commit (for example git pull master), this updates your submodules
+git submodule update --recursive
+
+# these commands will pull from master for each submodule
+git fetch --recursive-submodules
+git submodule foreach git pull origin master
+git pull
 ```
-from the base folder of this repository. This script will recursively update all submodules in the repository.
-Please note that this is for the command line implementation. A GUI is recommended for further errors.
