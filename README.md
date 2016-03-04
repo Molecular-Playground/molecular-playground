@@ -1,16 +1,23 @@
 # Molecular Playground
 
-### Getting started
+### Getting Started
+#### Docker
 To get started, you first need to install docker. Instructions for installing docker can be found [here](https://docs.docker.com/engine/installation/). After you have docker installed, you will need to install docker compose. Follow the instructions [here](https://docs.docker.com/compose/install/).
 
-### To Run
-After docker is all set up, simply run the following commands:
+#### Clone Recursively
+This repo uses [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules). In order to clone everything correctly, you have to clone recursively:
 ```
-# clone the repo recursively
 git clone --recursive https://github.com/molecular-playground/molecular-playground.git
 cd molecular-playground
+```
+More useful commands for git submodules can be found in [Repository Maintenence](#Repository Maintenence) below.
 
-# build and run
+#### Configuration Files
+Configuration files with secure information such as passwords must be created before running the system. Currently there is only one configuration file that must be created, the configuration file for [ms-email](https://github.com/molecular-playground/ms-email#important-setup-instructions).
+
+### To Run
+After your environment is all set up, simply run the following commands:
+```
 docker-compose build
 docker-compose up
 ```
