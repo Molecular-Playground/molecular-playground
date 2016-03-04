@@ -16,6 +16,18 @@ docker-compose up
 ```
 The gateway will be exposed on port 8000!
 
+### Repository Maintenence
+For those of you who are not using a GUI to interact with git, here are some useful commands:
+```
+# after checking out a commit (for example git pull master), this updates your submodules
+git submodule update --recursive
+
+# these commands will pull from master for each submodule
+git fetch --recursive-submodules
+git submodule foreach git pull origin master
+git pull
+```
+
 ### Resetting the Database
 The database uses a docker volume to persist data between containers and images. It will first look for and try to use a volume named ```postgres-data```, however if one does not exist it will create a volume named ```molecularplaygorund_postgres-data``` instead. To reset the database, all one has to do is remove the docker volume and run docker-compose again. Here is a sample walkthrough:
 ```
@@ -30,18 +42,6 @@ docker volume rm molecularplayground_postgres-data
 # run docker-compose again to create the new volume
 docker-compose build
 docker-compose up
-```
-
-### Repository Maintenence
-For those of you who are not using a GUI to interact with git, here are some useful commands:
-```
-# after checking out a commit (for example git pull master), this updates your submodules
-git submodule update --recursive
-
-# these commands will pull from master for each submodule
-git fetch --recursive-submodules
-git submodule foreach git pull origin master
-git pull
 ```
 
 ### Troubleshooting
