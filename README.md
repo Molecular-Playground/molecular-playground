@@ -4,8 +4,13 @@
 To get started, you first need to install docker. Instructions for installing docker can be found [here](https://docs.docker.com/engine/installation/). After you have docker installed, you will need to install docker compose. Follow the instructions [here](https://docs.docker.com/compose/install/).
 
 ### To Run
-After installation is all set up, simply run the following commands:
+After docker is all set up, simply run the following commands:
 ```
+# clone the repo recursively
+git clone --recursive https://github.com/molecular-playground/molecular-playground.git
+cd molecular-playground
+
+# build and run
 docker-compose build
 docker-compose up
 ```
