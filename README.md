@@ -30,7 +30,7 @@ For those of you who are not using a GUI to interact with git, here are some use
 git submodule update --recursive
 
 # these commands will pull from master for each submodule
-git fetch --recursive-submodules
+git fetch --recurse-submodules
 git submodule foreach git pull origin master
 git pull
 ```
