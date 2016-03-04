@@ -10,7 +10,7 @@ This repo uses [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodu
 git clone --recursive https://github.com/molecular-playground/molecular-playground.git
 cd molecular-playground
 ```
-More useful commands for git submodules can be found in [Repository Maintenence](#Repository Maintenence) below.
+More useful commands for git submodules can be found in [Repository Maintenence](#repository-maintenence) below.
 
 #### Configuration Files
 Configuration files with secure information such as passwords must be created before running the system. Currently there is only one configuration file that must be created, the configuration file for [ms-email](https://github.com/molecular-playground/ms-email#important-setup-instructions).
