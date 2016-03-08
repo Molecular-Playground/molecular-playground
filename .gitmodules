@@ -16,6 +16,3 @@
 [submodule "databaes"]
 	path = databaes
 	url = https://github.com/molecular-playground/databaes
-[submodule "ms-users-auth"]
-	path = ms-users-auth
-	url = https://github.com/molecular-playground/ms-users-auth.git

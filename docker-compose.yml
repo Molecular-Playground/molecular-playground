@@ -20,15 +20,6 @@ services:
       - postgres
     command: npm start
 
-  msusersauth:
-    build: ms-users-auth/
-    networks:
-      - default
-      - database
-    depends_on:
-      - postgres
-    command: npm start
-
   mslogin:
     build: ms-login/
     networks:
