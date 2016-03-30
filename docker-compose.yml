@@ -42,6 +42,15 @@ services:
     build: ms-email/
     command: npm start
 
+  msmolecules:
+    build: ms-molecules/
+    networks:
+      - default
+      - database
+    depends_on:
+      - postgres
+    command: npm start
+
   gateway:
     build: gateway/
     ports:
