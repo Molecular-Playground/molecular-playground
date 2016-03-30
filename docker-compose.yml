@@ -51,6 +51,12 @@ services:
       - postgres
     command: npm start
 
+  mshosting:
+    build: ms-hosting/
+    networks:
+      - default
+    command: npm start
+
   gateway:
     build: gateway/
     ports:
