@@ -16,3 +16,9 @@
 [submodule "databaes"]
 	path = databaes
 	url = https://github.com/molecular-playground/databaes
+[submodule "ms-hosting"]
+	path = ms-hosting
+	url = https://github.com/molecular-playground/ms-hosting.git
+[submodule "ms-molecules"]
+	path = ms-molecules
+	url = https://github.com/molecular-playground/ms-molecules.git
