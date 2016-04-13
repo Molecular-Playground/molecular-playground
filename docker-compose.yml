@@ -47,14 +47,10 @@ services:
     networks:
       - default
       - database
+    volumes:
+      - ../molecules:/src/public
     depends_on:
       - postgres
-    command: npm start
-
-  mshosting:
-    build: ms-hosting/
-    networks:
-      - default
     command: npm start
 
   gateway:
