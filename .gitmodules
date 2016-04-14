@@ -19,3 +19,7 @@
 [submodule "ms-molecules"]
 	path = ms-molecules
 	url = https://github.com/molecular-playground/ms-molecules
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/molecular-playground/frontend
+	
