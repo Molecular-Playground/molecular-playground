@@ -74,3 +74,29 @@ When a new submodule is added to the system and you would like to pull it onto y
 git submodule init
 git submodule update --recursive
 ```
+
+###### "Help! I get a weird ```FATAL: could not map anonymous shared memory: Cannot allocate memory``` error when I run docker-compose up!"
+This error occurs when the postgres container runs out of memory during docker-compose. While the suggested solution is to simply use a machine with more memory, it may be possible to get it up and running with a little bit of work. Using the following commands, run the postgres container manually to initialize the database. Afterwards you should be able to run docker-compose up without any problems. You will have to do this every time you reinitialize the database by removing the docker volume it uses.
+```
+# make sure to remove all containers that depend on the molecularplayground_postgres-data volume
+# for most cases that means just removing the docker-compose volumes
+docker-compose stop
+docker-compose rm
+
+# remove the molecularplayground_postgres-data volume
+docker volume rm molecularplayground_postgres-data
+
+# create a postgres container as described in the databaes submodule with the volume name molecularplayground_postgres-data
+cd databaes
+docker build -t postgres .
+docker run -d --name postgres -e POSTGRES_PASSWORD=dankmemes -v molecularplayground_postgres-data:/var/lib/postgresql/data postgres
+cd ..
+
+# remove said postgres container
+docker stop postgres
+docker rm postgres
+
+# you should be all set!
+docker-compose build
+docker-compose up -d
+```
