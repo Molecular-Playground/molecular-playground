@@ -29,6 +29,10 @@ For those of you who are not using a GUI to interact with git, here are some use
 # after checking out a commit (for example git pull master), this updates your submodules
 git submodule update --recursive
 
+# if you checked out a commit and it added a new submodule, run this command before doing anything else
+# it initializes the submodule so commands like the above one will work
+git submodule init
+
 # these commands will pull from master for each submodule
 git fetch --recurse-submodules
 git submodule foreach git pull origin master
@@ -62,4 +66,11 @@ git submodule update --recursive
 You most likely are running docker on Mac or Windows and have recently switched internet connections. When you switch internet connections while your docker-machine is still running, it looses it's connection. Assuming your docker-machine is called default, run:
 ```
 docker-machine restart default
+```
+
+###### "Help! I tried updating my submodules recursively but the submodule folder(s) are empty!"
+When a new submodule is added to the system and you would like to pull it onto your machine, you must first init the submodule before you are able to update it.
+```
+git submodule init
+git submodule update --recursive
 ```
