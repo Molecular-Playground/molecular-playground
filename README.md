@@ -12,8 +12,25 @@ cd molecular-playground
 ```
 More useful commands for git submodules can be found in [Repository Maintenence](#repository-maintenence) below.
 
-##### Configuration Files
-Configuration files with secure information such as passwords must be created before running the system. Currently there is only one configuration file that must be created, the configuration file for [ms-email](https://github.com/molecular-playground/ms-email#important-setup-instructions).
+##### Environment File
+This application uses environment variables to make it easier to deploy at different locations. You will need to create a file named ```molecular-playground.env``` in this directory for deployment to work properly. The following environment variables are used throughout the application:
+
+- ```SIGNING_KEY``` - The key used to sign authentication tokens.
+- ```POSTGRES_PASSWORD``` - The password used to connect to the postgres database.
+- ```SERVER_URL``` - The URL of the server this microservice is being hosted on.
+- ```GMAIL_USERNAME``` - The username of the gmail account you would like to use to send emails.
+- ```GMAIL_PASSWORD``` - The password of the gmail account you would like to use to send emails.
+
+Below is an example of what your ```molecular-playground.env``` should look like using the above environment variables. ```YOUR_VALUE_HERE``` is simply a placeholder for your own value.
+```
+SIGNING_KEY=YOUR_VALUE_HERE
+POSTGRES_PASSWORD=YOUR_VALUE_HERE
+SERVER_URL=YOUR_VALUE_HERE
+GMAIL_USERNAME=YOUR_VALUE_HERE
+GMAIL_PASSWORD=YOUR_VALUE_HERE
+```
+
+If you decide to run any microservices manually, make sure to use the same molecular-playground.env file.
 
 ### To Run
 After your environment is all set up, simply run the following commands:

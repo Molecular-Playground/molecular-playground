@@ -4,8 +4,7 @@ services:
   postgres:
     build:
       context: databaes/
-    environment:
-      POSTGRES_PASSWORD: dankmemes
+    env_file: molecular-playground.env
     networks:
       - database
     volumes:
@@ -13,6 +12,7 @@ services:
 
   msusers:
     build: ms-users/
+    env_file: molecular-playground.env
     networks:
       - default
       - database
@@ -22,6 +22,7 @@ services:
 
   mslogin:
     build: ms-login/
+    env_file: molecular-playground.env
     networks:
       - default
       - database
@@ -31,6 +32,7 @@ services:
 
   msschedule:
     build: ms-schedule/
+    env_file: molecular-playground.env
     networks:
       - default
       - database
@@ -40,10 +42,12 @@ services:
 
   msemail:
     build: ms-email/
+    env_file: molecular-playground.env
     command: npm start
 
   msmolecules:
     build: ms-molecules/
+    env_file: molecular-playground.env
     networks:
       - default
       - database
@@ -55,16 +59,18 @@ services:
 
   gateway:
     build: gateway/
+    env_file: molecular-playground.env
     ports:
       - "8000:8000"
     command: npm start
 
   frontend:
     build: frontend/
+    env_file: molecular-playground.env
     ports:
       - "80:3000"
     command: npm start
-    
+
 networks:
   database:
     driver: bridge
